@@ -3,6 +3,7 @@ import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
 
 // Pages
 import LoginPage from './pages/LoginPage'
+import OverviewPage from './pages/OverviewPage'
 
 class App extends Component {
   state = {
@@ -12,7 +13,7 @@ class App extends Component {
   _login = () => this.setState({ authorized: true })
 
   render() {
-    return <LoginPage login={this._login} />
+    return this.state.authorized ? <OverviewPage /> : <LoginPage login={this._login} />
   }
 }
 
