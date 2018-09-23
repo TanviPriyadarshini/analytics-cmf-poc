@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+
+import { Container } from '../sharedComponents/commonStyles'
+
 import { Icon, Card, Row, Col, Menu, Layout } from 'antd';
 const { Meta } = Card;
 const { SubMenu } = Menu;
 const { Header, Content } = Layout;
-
-const Container = styled(Content) `
-    width: 80%;
-    max-width: 960px;
-    margin: 3rem auto;
-`
 
 const VideoCard = styled(Card) `
     width: 100%;
