@@ -1,0 +1,186 @@
+[
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-04-2018 17:12:49",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536081169",
+    "created": "2018-09-06T17:42:29.327Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-04-2018 17:16:51",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536081411",
+    "created": "2018-09-06T17:42:29.913Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-04-2018 17:48:37",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536083317",
+    "created": "2018-09-06T17:42:29.412Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-04-2018 17:58:19",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536083899",
+    "created": "2018-09-06T17:42:29.911Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:05:14",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536707114",
+    "created": "2018-09-13T02:39:09.360Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:07:15",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536707235",
+    "created": "2018-09-13T01:06:11.204Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:07:26",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536707246",
+    "created": "2018-09-13T02:39:08.648Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:08:18",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536707298",
+    "created": "2018-09-13T02:39:09.327Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:15:28",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536707728",
+    "created": "2018-09-13T02:39:08.647Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:20:48",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536708048",
+    "created": "2018-09-13T02:39:10.190Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:26:06",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536708366",
+    "created": "2018-09-13T02:39:09.336Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:38:34",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536709114",
+    "created": "2018-09-13T02:39:10.227Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:43:56",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536709436",
+    "created": "2018-09-13T01:05:58.509Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:43:57",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536709437",
+    "created": "2018-09-13T01:05:34.769Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:44:16",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536709456",
+    "created": "2018-09-13T01:05:48.870Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:44:21",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536709461",
+    "created": "2018-09-13T01:05:53.723Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:44:22",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536709462",
+    "created": "2018-09-13T02:39:09.354Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:49:55",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536709795",
+    "created": "2018-09-13T02:39:08.667Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-11-2018 23:55:11",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536710111",
+    "created": "2018-09-13T02:39:10.269Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-12-2018 00:00:29",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536710429",
+    "created": "2018-09-13T02:39:08.687Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-12-2018 00:05:53",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536710753",
+    "created": "2018-09-13T02:39:08.668Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-12-2018 00:11:19",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536711079",
+    "created": "2018-09-13T02:39:10.159Z"
+  },
+  {
+    "_headset_id": "IL-001",
+    "_timestamp": "09-12-2018 00:16:44",
+    "_context": "leftright",
+    "_id": "MSG",
+    "_uv_data": "https://s3-us-west-2.amazonaws.com/retinad-analytics-uv-data/IL-001_1536711404",
+    "created": "2018-09-13T02:39:08.627Z"
+  }
+]
