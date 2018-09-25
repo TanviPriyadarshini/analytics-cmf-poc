@@ -90,10 +90,14 @@ class AnalyticsPage extends Component {
                     <ChartWrap>
                         <PieChart width={800} height={400}>
                             <Pie
-                                // dataKey={'freq'}
-                                data={recordsChartData} cx={500} cy={200}
-                                innerRadius={40} outerRadius={80} fill="#82ca9d"
-                            />
+                                data={recordsChartData} cx={400} cy={200}
+                                innerRadius={150} outerRadius={180} fill="#82ca9d"
+                                paddingAngle={5}
+                            >
+                                {
+                                    recordsChartData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]} />)
+                                }
+                            </Pie>
                             <Tooltip />
                             <Legend verticalAlign="center" align="right" height={36} />
                         </PieChart>
