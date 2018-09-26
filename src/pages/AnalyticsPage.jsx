@@ -75,7 +75,7 @@ class AnalyticsPage extends Component {
                     <ChartWrap>
                         <LineChart width={850} height={250} data={completionChartData}>
                             <XAxis dataKey="timestamp" />
-                            <YAxis />
+                            <YAxis label={{ value: 'No. of users', angle: -90, position: 'insideStart' }} />
                             <Tooltip />
                             <Line
                                 activeDot={{ r: 1 }}
