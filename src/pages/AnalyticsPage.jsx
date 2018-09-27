@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Vimeo from 'react-vimeo'
 import {
     LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer,
     PieChart, Pie, Legend, Sector, Cell
@@ -47,6 +48,14 @@ const VideoMainCardHeader = styled.div`
     }    
 `
 
+const SectionCard = styled(Card) `
+    margin-bottom: 1.5rem;
+`
+
+const SubSectionHeading = styled.h2`
+    margin: 0;
+`
+
 const uvChartData = uvData
     .filter(activity => activity < 500)
     // TODO: convert the index into timeStamp
@@ -78,11 +87,133 @@ class AnalyticsPage extends Component {
             <small>[#{videoMetadata.id}]</small>
         </VideoMainCardHeader>
 
-        return <Card title={CardHeader}>
+        return <SectionCard title={CardHeader}>
             <p>
                 {videoMetadata.description}
             </p>
-        </Card>
+        </SectionCard>
+    }
+
+    renderOverview = response => <div>
+        <h3>Overview</h3>
+        <p>{response}</p>
+    </div>
+
+    renderAnalyticsCard = () => {
+
+        const Point = styled.div`
+            margin: 1rem;
+            
+            strong{
+                display: block;
+            }
+        `
+
+        const analysisPoints = [
+            {
+                heading: `renderAnalyticsCard`,
+                result: `asdfnas asdh aosda sdjnasi fpoas fpas dohasudgask`
+            }
+        ]
+
+        const AnalysisPoint = ({ heading, result }) => <Point>
+            <strong>{heading}</strong>
+            {result}
+        </Point>
+
+        return <SectionCard title="Basic Analysis">
+            {analysisPoints.map(point => <AnalysisPoint {...point} />)}
+        </SectionCard>
+    }
+
+
+    renderActivityChartCard = () => <SectionCard
+        title={
+            <SubSectionHeading>Activity Chart</SubSectionHeading>
+        }
+    >
+        {this.renderOverview(
+            `Lorem ipsum dolor sit amet, pro errem virtute ornatus an. 
+            In legimus deterruisset mel. Quo te labitur dissentias, cum simul necessitatibus ad, 
+            timeam scriptorem ad vel. No pro odio natum eripuit, liber homero vel cu, his unum dolorum ut`
+        )}
+        <ScrollChartWrap>
+            <LineChart width={uvChartData.length * 5} height={250} data={uvChartData}>
+                <YAxis />
+                <Tooltip />
+                <Line
+                    activeDot={{ r: 1 }}
+                    type="monotone" dataKey="activity" stroke="#8884d8"
+                />
+            </LineChart>
+        </ScrollChartWrap>
+    </SectionCard>
+
+    renderCompletionChartCard = () => <SectionCard
+        title={
+            <SubSectionHeading>Completion Rate</SubSectionHeading>
+        }
+    >
+        {this.renderOverview(
+            `Lorem ipsum dolor sit amet, pro errem virtute ornatus an. 
+            In legimus deterruisset mel. Quo te labitur dissentias, cum simul necessitatibus ad, 
+            timeam scriptorem ad vel. No pro odio natum eripuit, liber homero vel cu, his unum dolorum ut`
+        )}
+        <ChartWrap>
+            <LineChart width={850} height={250} data={completionChartData}>
+                <XAxis dataKey="timestamp" />
+                <YAxis label={{ value: 'No. of users', angle: -90, position: 'insideStart' }} />
+                <Tooltip />
+                <Line
+                    activeDot={{ r: 1 }}
+                    type="monotone" dataKey="completion" stroke="#8884d8"
+                />
+            </LineChart>
+        </ChartWrap>
+    </SectionCard>
+
+    renderLocationInsightsCard = () => <SectionCard
+        title={
+            <SubSectionHeading>Location Insights</SubSectionHeading>
+        }
+    >
+        <ChartWrap>
+            <PieChart width={800} height={400}>
+                <Pie
+                    data={recordsChartData} cx={400} cy={200}
+                    innerRadius={150} outerRadius={180} fill="#82ca9d"
+                    paddingAngle={5}
+                >
+                    {
+                        recordsChartData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]} />)
+                    }
+                </Pie>
+                <Tooltip />
+                <Legend align="right" height={36} />
+            </PieChart>
+        </ChartWrap>
+    </SectionCard>
+
+    renderHeatmapCard = () => {
+        const Player = styled(Vimeo) `
+            width: 100%;
+            height: ${window.innerWidth * .55}px;
+        `
+
+        return <SectionCard
+            title={
+                <SubSectionHeading>Heatmap</SubSectionHeading>
+            }
+        >
+            {this.renderOverview(
+                `Lorem ipsum dolor sit amet, pro errem virtute ornatus an. 
+        In legimus deterruisset mel. Quo te labitur dissentias, cum simul necessitatibus ad, 
+        timeam scriptorem ad vel. No pro odio natum eripuit, liber homero vel cu, his unum dolorum ut`
+            )}
+
+
+            <Player videoId={`292207203`} />
+        </SectionCard>
     }
 
     render() {
@@ -93,54 +224,15 @@ class AnalyticsPage extends Component {
         return (
             <Container>
                 {this.renderMainCard(videoMetadata)}
-                <br />
-                <br />
-                <Card title="Activity Chart">
-                    <ScrollChartWrap>
-                        <LineChart width={uvChartData.length * 5} height={250} data={uvChartData}>
-                            <YAxis />
-                            <Tooltip />
-                            <Line
-                                activeDot={{ r: 1 }}
-                                type="monotone" dataKey="activity" stroke="#8884d8"
-                            />
-                        </LineChart>
-                    </ScrollChartWrap>
-                </Card>
-                <br />
-                <br />
-                <Card title="Completion Rate">
-                    <ChartWrap>
-                        <LineChart width={850} height={250} data={completionChartData}>
-                            <XAxis dataKey="timestamp" />
-                            <YAxis label={{ value: 'No. of users', angle: -90, position: 'insideStart' }} />
-                            <Tooltip />
-                            <Line
-                                activeDot={{ r: 1 }}
-                                type="monotone" dataKey="completion" stroke="#8884d8"
-                            />
-                        </LineChart>
-                    </ChartWrap>
-                </Card>
-                <br />
-                <br />
-                <Card title="Location Insights">
-                    <ChartWrap>
-                        <PieChart width={800} height={400}>
-                            <Pie
-                                data={recordsChartData} cx={400} cy={200}
-                                innerRadius={150} outerRadius={180} fill="#82ca9d"
-                                paddingAngle={5}
-                            >
-                                {
-                                    recordsChartData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]} />)
-                                }
-                            </Pie>
-                            <Tooltip />
-                            <Legend verticalAlign="center" align="right" height={36} />
-                        </PieChart>
-                    </ChartWrap>
-                </Card>
+
+                {this.renderHeatmapCard()}
+                {/* {this.renderAnalyticsCard()} */}
+
+                {this.renderActivityChartCard()}
+
+                {this.renderCompletionChartCard()}
+
+                {this.renderLocationInsightsCard()}
             </Container>
         )
     }
