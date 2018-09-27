@@ -13,6 +13,7 @@ import { Card } from 'antd'
 import uvData from '../utils/sampleactivityData.json';
 import completionData from '../utils/completionRateObject.json';
 import recordsData from '../utils/retinad-data.json';
+import videoList from '../utils/videoList.json';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 const RADIAN = Math.PI / 180;
@@ -26,6 +27,24 @@ const ScrollChartWrap = styled.div`
 const ChartWrap = styled.div`
     width: 100%;
     min-height: 250px;
+`
+
+const VideoMainCardHeader = styled.div`
+    display: flex;
+    align-items: baseline;
+
+    h1{
+        margin: 0
+    }
+
+    small{
+        opacity: .5;
+        margin-left: 1rem;
+        cursor: pointer;
+    }
+    small:hover{
+        text-decoration: underline;
+    }    
 `
 
 const uvChartData = uvData
@@ -50,16 +69,35 @@ const recordsChartData = Object.keys(recordsdataObject)
         name: location
     }))
 
-console.log({ recordsChartData })
-
 class AnalyticsPage extends Component {
+
+    renderMainCard = videoMetadata => {
+
+        const CardHeader = <VideoMainCardHeader>
+            <h1>{videoMetadata.title}</h1>
+            <small>[#{videoMetadata.id}]</small>
+        </VideoMainCardHeader>
+
+        return <Card title={CardHeader}>
+            <p>
+                {videoMetadata.description}
+            </p>
+        </Card>
+    }
+
     render() {
+        const videoId = this.props.match.params.id;
+
+        const videoMetadata = videoList.find(({ id }) => id == videoId)
+
         return (
             <Container>
+                {this.renderMainCard(videoMetadata)}
+                <br />
+                <br />
                 <Card title="Activity Chart">
                     <ScrollChartWrap>
                         <LineChart width={uvChartData.length * 5} height={250} data={uvChartData}>
-                            {/* <XAxis /> */}
                             <YAxis />
                             <Tooltip />
                             <Line
