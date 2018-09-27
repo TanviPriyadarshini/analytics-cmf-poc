@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { Container } from '../sharedComponents/commonStyles'
 
 import defaultThumbnail from "../static/fistfulOfStarsScreenShot.png"
+import videoList from "../utils/videoList.json"
 
 import { Icon, Card, Row, Col, Menu, Layout } from 'antd';
 const { Meta } = Card;
@@ -37,34 +38,24 @@ const UploadCard = styled.div`
     }
 `
 
-const videoList = [
-    {
-        id: `wjsb324jk23bn4kj23`,
-        title: `Fistful of Stars`,
-        thumbnail: defaultThumbnail,
-        description: `FISTFUL OF STARS is the world's first Virtual Reality exploration 
-        of the cosmos alongside the Hubble Telescope that transports you inside of the
-        Orion Nebula and reveals the cosmic connections between humans and the stars`
-    }
-]
 
 class CardSection extends Component {
 
     renderCard = ({ id, thumbnail, title, description }) => {
-        const PrimaryBtn = <Link to={`analysis/${id}`}>
-            <Icon type="arrow-right" theme="outlined" />
-        </Link>
+        const PrimaryBtn = <Icon type="arrow-right" theme="outlined" />
 
-        return <VideoCard
-            hoverable
-            cover={<img alt={title} src={thumbnail} />}
-            actions={[PrimaryBtn]}
-        >
-            <Meta
-                title={title}
-                description={description.substring(0, 100) + `...`}
-            />
-        </VideoCard>
+        return <Link to={`analysis/${id}`}>
+            <VideoCard
+                hoverable
+                cover={<img alt={title} src={defaultThumbnail} />}
+                actions={[PrimaryBtn]}
+            >
+                <Meta
+                    title={title}
+                    description={description.substring(0, 100) + `...`}
+                />
+            </VideoCard>
+        </Link>
     }
 
 
