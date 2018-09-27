@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 
 import { Container } from '../sharedComponents/commonStyles'
 
+import defaultThumbnail from "../static/fistfulOfStarsScreenShot.png"
+
 import { Icon, Card, Row, Col, Menu, Layout } from 'antd';
 const { Meta } = Card;
 const { SubMenu } = Menu;
@@ -13,22 +15,21 @@ const VideoCard = styled(Card) `
     width: 100%;
     margin: 1rem 0;
 `
-const defaultThumbnail = `fistfulOfStarsScreenShot.png`
 
 class CardSection extends Component {
 
-    renderCard = id => {
+    renderCard = ({ id, thumbnail, title }) => {
         const PrimaryBtn = <Link to={`analysis/${id}`}>
             <Icon type="arrow-right" theme="outlined" />
         </Link>
 
         return <VideoCard
             hoverable
-            cover={<img alt="example" src="fistfulOfStarsScreenShot.png" />}
+            cover={<img alt={title} src={thumbnail} />}
             actions={[PrimaryBtn]}
         >
             <Meta
-                title="Fistful of Stars"
+                title={title}
             />
         </VideoCard>
     }
@@ -42,7 +43,7 @@ class CardSection extends Component {
                 <Row gutter={16}>
                     {new Array(2).fill('').map((_, i) =>
                         <Col key={i} span={8}>
-                            {this.renderCard(i)}
+                            {this.renderCard({ id: i, thumbnail: defaultThumbnail, title: `Fistful of Stars` })}
                         </Col>
                     )}
                 </Row>
