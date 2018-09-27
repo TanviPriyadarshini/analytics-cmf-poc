@@ -220,14 +220,6 @@ class AnalyticsPage extends Component {
 
     renderFilmAnalysisCard = () => {
         const { palette } = LeftRightMetaData
-        // let chartData = {}
-
-        // palette = palette.sort();
-        // palette.map(color => { chartData[color] = chartData[color] ? chartData[color] + 1 : 1 })
-
-        // chartData = Object.keys(chartData).map(color => ({ name: color, value: chartData[color] }))
-
-        // console.log({ chartData })
 
         const PaletteBox = styled.div`
             display: flex;
