@@ -15,6 +15,7 @@ import uvData from '../utils/sampleactivityData.json';
 import completionData from '../utils/completionRateObject.json';
 import recordsData from '../utils/retinad-data.json';
 import videoList from '../utils/videoList.json';
+import LeftRightMetaData from '../utils/leftright-metadata.json';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 const RADIAN = Math.PI / 180;
@@ -94,8 +95,8 @@ class AnalyticsPage extends Component {
         </SectionCard>
     }
 
-    renderOverview = response => <div>
-        <h3>Overview</h3>
+    renderOverview = (response, heading = 'Overview') => <div>
+        <h3>{heading}</h3>
         <p>{response}</p>
     </div>
 
@@ -180,12 +181,13 @@ class AnalyticsPage extends Component {
         <ChartWrap>
             <PieChart width={800} height={400}>
                 <Pie
+                    dataKey='value'
                     data={recordsChartData} cx={400} cy={200}
                     innerRadius={150} outerRadius={180} fill="#82ca9d"
                     paddingAngle={5}
                 >
                     {
-                        recordsChartData.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]} />)
+                        recordsChartData.map((entry, index) => <Cell key={index} fill={COLORS[index % COLORS.length]} />)
                     }
                 </Pie>
                 <Tooltip />
@@ -216,6 +218,50 @@ class AnalyticsPage extends Component {
         </SectionCard>
     }
 
+    renderFilmAnalysisCard = () => {
+        const { palette } = LeftRightMetaData
+        // let chartData = {}
+
+        // palette = palette.sort();
+        // palette.map(color => { chartData[color] = chartData[color] ? chartData[color] + 1 : 1 })
+
+        // chartData = Object.keys(chartData).map(color => ({ name: color, value: chartData[color] }))
+
+        // console.log({ chartData })
+
+        const PaletteBox = styled.div`
+            display: flex;
+            align-items: stretch;
+            height: 120px;
+            overflow-x: scroll;
+            width: 100%;
+            padding-bottom: .9rem;
+        `
+
+        const PaletteStrip = styled.div`
+            flex: 1;
+            min-width: 2px;
+            background-color: ${props => `#${props.color}`};
+        `
+
+        return <SectionCard
+            title={
+                <SubSectionHeading>Film Analysis</SubSectionHeading>
+            }
+        >
+            {this.renderOverview(
+                `Lorem ipsum dolor sit amet, pro errem virtute ornatus an. 
+            In legimus deterruisset mel. Quo te labitur dissentias, cum simul necessitatibus ad, 
+            timeam scriptorem ad vel. No pro odio natum eripuit, liber homero vel cu, his unum dolorum ut`,
+                `Palette Overview`
+            )}
+
+            <PaletteBox>
+                {palette.sort().map((color, i) => <PaletteStrip key={i} color={color} />)}
+            </PaletteBox>
+        </SectionCard>
+    }
+
     render() {
         const videoId = this.props.match.params.id;
 
@@ -233,6 +279,8 @@ class AnalyticsPage extends Component {
                 {this.renderCompletionChartCard()}
 
                 {this.renderLocationInsightsCard()}
+
+                {this.renderFilmAnalysisCard()}
             </Container>
         )
     }
