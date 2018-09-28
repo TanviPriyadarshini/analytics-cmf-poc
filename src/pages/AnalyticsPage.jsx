@@ -46,7 +46,7 @@ const VideoMainCardHeader = styled.div`
     }
     small:hover{
         text-decoration: underline;
-    }    
+    }
 `
 
 const SectionCard = styled(Card) `
@@ -104,7 +104,7 @@ class AnalyticsPage extends Component {
 
         const Point = styled.div`
             margin: 1rem;
-            
+
             strong{
                 display: block;
             }
@@ -134,9 +134,7 @@ class AnalyticsPage extends Component {
         }
     >
         {this.renderOverview(
-            `Lorem ipsum dolor sit amet, pro errem virtute ornatus an. 
-            In legimus deterruisset mel. Quo te labitur dissentias, cum simul necessitatibus ad, 
-            timeam scriptorem ad vel. No pro odio natum eripuit, liber homero vel cu, his unum dolorum ut`
+            `Your content is too slow, many viewers are fatigued out of the experience.`
         )}
         <ScrollChartWrap>
             <LineChart width={uvChartData.length * 5} height={250} data={uvChartData}>
@@ -156,9 +154,7 @@ class AnalyticsPage extends Component {
         }
     >
         {this.renderOverview(
-            `Lorem ipsum dolor sit amet, pro errem virtute ornatus an. 
-            In legimus deterruisset mel. Quo te labitur dissentias, cum simul necessitatibus ad, 
-            timeam scriptorem ad vel. No pro odio natum eripuit, liber homero vel cu, his unum dolorum ut`
+            `Great work! Your content is interesting and majority of the audience finished to the end!`
         )}
         <ChartWrap>
             <LineChart width={850} height={250} data={completionChartData}>
@@ -208,9 +204,7 @@ class AnalyticsPage extends Component {
             }
         >
             {this.renderOverview(
-                `Lorem ipsum dolor sit amet, pro errem virtute ornatus an. 
-        In legimus deterruisset mel. Quo te labitur dissentias, cum simul necessitatibus ad, 
-        timeam scriptorem ad vel. No pro odio natum eripuit, liber homero vel cu, his unum dolorum ut`
+                ` Your content make good use of peripherals but could be more engaging with more attention cues and interactive direction.`
             )}
 
 
@@ -242,9 +236,7 @@ class AnalyticsPage extends Component {
             }
         >
             {this.renderOverview(
-                `Lorem ipsum dolor sit amet, pro errem virtute ornatus an. 
-            In legimus deterruisset mel. Quo te labitur dissentias, cum simul necessitatibus ad, 
-            timeam scriptorem ad vel. No pro odio natum eripuit, liber homero vel cu, his unum dolorum ut`,
+                `The following are the predominant colors in each frame of your content.`,
                 `Palette Overview`
             )}
 
