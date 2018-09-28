@@ -7,7 +7,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import AnalyticsPage from './AnalyticsPage'
 import CardSection from './CardSection'
 
-import logoImage from '../static/cmf_logo/CMF_logo_en_col_cmyk.jpg'
+import logoImage from '../static/CMF_logo_en_rev_cmyk.gif'
 
 import { Layout, Menu, Breadcrumb, Icon, Card, Row, Col } from 'antd';
 const { Meta } = Card;
@@ -37,8 +37,8 @@ const SectionWrap = styled.div``
 
 const Logo = styled.img`
     float: left;
-    height: 90%;
-    width: auto;
+    height: 100%;
+    width: 10rem;
     object-fit: contain;
 `
 
