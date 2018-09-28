@@ -277,6 +277,27 @@ class AnalyticsPage extends Component {
         </SectionCard>
     }
 
+    renderLumiAnalysisCard = () => {
+        const ScoreTab = styled(SubSectionHeading) `
+            border: 1px solid #c5c5c5;
+            border-radius: .4rem;
+            padding: .4rem 1rem;
+        `
+
+        const LumiHead = styled(SubSectionHeading) `
+            font-size: 2rem;
+        `
+        return <SectionCard
+            title={<LumiHead>LumiScore</LumiHead>}
+            extra={<ScoreTab>2.3</ScoreTab>}
+        >
+            {this.renderOverview(
+                `The following are the predominant colors in each frame of your content.`,
+            )}
+
+        </SectionCard>
+    }
+
     render() {
         const videoId = this.props.match.params.id;
 
@@ -296,6 +317,8 @@ class AnalyticsPage extends Component {
                 {this.renderLocationInsightsCard()}
 
                 {this.renderFilmAnalysisCard()}
+
+                {this.renderLumiAnalysisCard()}
             </Container>
         )
     }
