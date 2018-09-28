@@ -7,6 +7,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import AnalyticsPage from './AnalyticsPage'
 import CardSection from './CardSection'
 
+import logoImage from '../static/cmf_logo/CMF_logo_en_col_cmyk.jpg'
 
 import { Layout, Menu, Breadcrumb, Icon, Card, Row, Col } from 'antd';
 const { Meta } = Card;
@@ -34,6 +35,12 @@ const CardGridItem = styled(Card.Grid) `
 
 const SectionWrap = styled.div``
 
+const Logo = styled.img`
+    float: left;
+    height: 90%;
+    width: auto;
+    object-fit: contain;
+`
 
 class OverviewPage extends Component {
 
@@ -42,11 +49,12 @@ class OverviewPage extends Component {
             <Router history={history}>
                 <Page>
                     <Header>
-                        <div className="logo" />
+                        <Logo src={logoImage} />
                         <NavTabs
                             theme="dark"
                             mode="horizontal"
                         >
+                            <div className="logo"></div>
                             <Menu.Item key="2">About Us</Menu.Item>
                             <Menu.Item key="3">Logout</Menu.Item>
                         </NavTabs>
@@ -60,7 +68,7 @@ class OverviewPage extends Component {
                     </SectionWrap>
 
                     <Footer style={{ textAlign: 'center' }}>
-                        LumiereVR ⓒ 2018
+                        CMF ⓒ 2018
                 </Footer>
                 </Page>
             </Router>
