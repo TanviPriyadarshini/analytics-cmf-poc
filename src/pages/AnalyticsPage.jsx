@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Vimeo from 'react-vimeo'
+import ReactPlayer from 'react-player'
 import {
     LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer,
     PieChart, Pie, Legend, Sector, Cell
@@ -8,7 +8,7 @@ import {
 
 import { Container } from '../sharedComponents/commonStyles'
 
-import { Card } from 'antd'
+import { Card, Tag, Icon } from 'antd'
 
 // data
 import uvData from '../utils/sampleactivityData.json';
@@ -193,10 +193,28 @@ class AnalyticsPage extends Component {
     </SectionCard>
 
     renderHeatmapCard = () => {
-        const Player = styled(Vimeo) `
-            width: 100%;
-            height: ${window.innerWidth * .55}px;
+
+        const Player = styled(ReactPlayer) `
+            width: 100% !important;
+            height: 75vw !important;
+
+            position: relative;
+
+            iframe{
+                width: 100% !important;
+                height: 100% !important;
+            }
         `
+        const CenterButton = styled.div`
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            
+            transform: translateX(-50%) translateY(-50%);
+        `
+        const PlayButton = () => <CenterButton>
+            <Icon type="play-circle" height={40} width={40} theme="filled" />
+        </CenterButton>
 
         return <SectionCard
             title={
@@ -208,7 +226,7 @@ class AnalyticsPage extends Component {
             )}
 
 
-            <Player videoId={`292207203`} />
+            <Player url={`https://vimeo.com/292207203`} />
         </SectionCard>
     }
 
@@ -230,6 +248,10 @@ class AnalyticsPage extends Component {
             background-color: ${props => `#${props.color}`};
         `
 
+        const Category = styled(Tag) `
+            margin: .3rem .4rem;
+        `
+
         return <SectionCard
             title={
                 <SubSectionHeading>Film Analysis</SubSectionHeading>
@@ -243,6 +265,15 @@ class AnalyticsPage extends Component {
             <PaletteBox>
                 {palette.sort().map((color, i) => <PaletteStrip key={i} color={color} />)}
             </PaletteBox>
+            <br />
+            <br />
+            {this.renderOverview(
+                ``,
+                `Tags Overview`
+            )}
+
+            {LeftRightMetaData.categories.map(category => <Category key={category}>{category}</Category>)}
+
         </SectionCard>
     }
 
