@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Router, Route, Switch, Redirect } from 'react-router'
+import { Link } from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
 
 // Components
@@ -49,7 +50,9 @@ class OverviewPage extends Component {
             <Router history={history}>
                 <Page>
                     <Header>
-                        <Logo src={logoImage} />
+                        <Link to='/'>
+                            <Logo src={logoImage} />
+                        </Link>
                         <NavTabs
                             theme="dark"
                             mode="horizontal"
