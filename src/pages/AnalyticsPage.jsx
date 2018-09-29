@@ -19,6 +19,7 @@ import LeftRightMetaData from '../utils/leftright-metadata.json';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 const RADIAN = Math.PI / 180;
+const VIMEO_LINK = `https://vimeo.com/video/292482744`
 
 const ScrollChartWrap = styled.div`
     width: inherit;
@@ -49,7 +50,7 @@ const VideoMainCardHeader = styled.div`
     }
 `
 
-const SectionCard = styled(Card) `
+const SectionCard = styled(Card)`
     margin-bottom: 1.5rem;
 `
 
@@ -194,9 +195,9 @@ class AnalyticsPage extends Component {
 
     renderHeatmapCard = () => {
 
-        const Player = styled(ReactPlayer) `
+        const Player = styled(ReactPlayer)`
             width: 100% !important;
-            height: 75vw !important;
+            height: 42vw !important;
 
             position: relative;
 
@@ -226,7 +227,7 @@ class AnalyticsPage extends Component {
             )}
 
 
-            <Player url={`https://vimeo.com/292207203`} />
+            <Player url={VIMEO_LINK} />
         </SectionCard>
     }
 
@@ -248,7 +249,7 @@ class AnalyticsPage extends Component {
             background-color: ${props => `#${props.color}`};
         `
 
-        const Category = styled(Tag) `
+        const Category = styled(Tag)`
             margin: .3rem .4rem;
         `
 
@@ -278,13 +279,13 @@ class AnalyticsPage extends Component {
     }
 
     renderLumiAnalysisCard = () => {
-        const ScoreTab = styled(SubSectionHeading) `
+        const ScoreTab = styled(SubSectionHeading)`
             border: 1px solid #c5c5c5;
             border-radius: .4rem;
             padding: .4rem 1rem;
         `
 
-        const LumiHead = styled(SubSectionHeading) `
+        const LumiHead = styled(SubSectionHeading)`
             font-size: 2rem;
         `
         return <SectionCard
