@@ -8,33 +8,34 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import AnalyticsPage from './AnalyticsPage'
 import CardSection from './CardSection'
 
-import logoImage from '../static/CMF_logo_en_rev_cmyk.gif'
+import navLogo from '../static/CMF_logo_en_rev_cmyk.gif'
+import footerLogo from '../static/retinad_logo_sticker_long-_dark_blue-trans-0.png'
 
-import { Layout, Menu, Breadcrumb, Icon, Card, Row, Col } from 'antd';
-const { Meta } = Card;
-const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
+import { Layout, Menu, Card } from 'antd';
+const { Header, Footer } = Layout;
 
 const history = createBrowserHistory()
 
-const Page = styled(Layout) `
+const Page = styled(Layout)`
     min-height: 100vh;
     width: 100vw;
 `
 
-const NavTabs = styled(Menu) `
+const NavTabs = styled(Menu)`
     line-height: 64px;
     display: flex;
     justify-content: flex-end;
 `
 
-const CardGridItem = styled(Card.Grid) `
+const CardGridItem = styled(Card.Grid)`
   width: 25%;
   text-align: center;
 `
 
 
-const SectionWrap = styled.div``
+const SectionWrap = styled.div`
+    min-height: 80vh;
+`
 
 const Logo = styled.img`
     float: left;
@@ -51,7 +52,7 @@ class OverviewPage extends Component {
                 <Page>
                     <Header>
                         <Link to='/'>
-                            <Logo src={logoImage} />
+                            <Logo src={navLogo} />
                         </Link>
                         <NavTabs
                             theme="dark"
@@ -71,8 +72,8 @@ class OverviewPage extends Component {
                     </SectionWrap>
 
                     <Footer style={{ textAlign: 'center' }}>
-                        CMF ⓒ 2018
-                </Footer>
+                        <img style={{ maxWidth: `180px` }} src={footerLogo} alt="" />
+                    </Footer>
                 </Page>
             </Router>
         )
