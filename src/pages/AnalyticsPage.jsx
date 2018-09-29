@@ -269,7 +269,8 @@ class AnalyticsPage extends Component {
             <br />
             <br />
             {this.renderOverview(
-                ``,
+                `The following tags are generated from your content to help you better understand 
+                the target categories and demographic. These tags can also be used as SEO resource.`,
                 `Tags Overview`
             )}
 
