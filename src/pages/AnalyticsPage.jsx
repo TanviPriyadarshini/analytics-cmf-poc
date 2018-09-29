@@ -210,7 +210,7 @@ class AnalyticsPage extends Component {
             position: absolute;
             top: 50%;
             left: 50%;
-            
+
             transform: translateX(-50%) translateY(-50%);
         `
         const PlayButton = () => <CenterButton>
@@ -293,7 +293,9 @@ class AnalyticsPage extends Component {
             extra={<ScoreTab>2.3</ScoreTab>}
         >
             {this.renderOverview(
-                `The following are the predominant colors in each frame of your content.`,
+                `Your experience is above average, but there are definitely room for improvements, we suggest looking at our top
+                 10 weekly recommended experiences as well as some of our monthly reports to draw inspiration for your next
+                 experience!`,
             )}
 
         </SectionCard>
