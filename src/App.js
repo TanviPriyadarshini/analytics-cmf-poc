@@ -7,7 +7,7 @@ import OverviewPage from './pages/OverviewPage'
 
 class App extends Component {
   state = {
-    authorized: false
+    authorized: true
   }
 
   _login = () => this.setState({ authorized: true })
